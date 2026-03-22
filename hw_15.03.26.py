@@ -54,7 +54,6 @@ print(get_average_grade(grades))
 print("-" * 20)
 
 #3 question
-
 '''
     :param nums: list of numbers
     :return: dictionary with keys:

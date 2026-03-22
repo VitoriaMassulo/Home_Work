@@ -1,6 +1,7 @@
 #gets a list of numbs
 #gets a n-th choice for decreasing order of the list
 # later try to fix the out of range problem for n-th (non existent list position)
+
 import random
 
 def three_digit():
@@ -50,6 +51,5 @@ while True:
             break
 
     print("Goodbye than!")
-
 
 

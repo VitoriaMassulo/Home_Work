@@ -1,0 +1,243 @@
+Index: hw_15.03.26.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#1 question\n\n#Write a function that groups words by number of letters\n#The key should be the length of the word, and the value should be a list of all words with that length\n'''\n:param words: list of words\n:return: dict { <length>: [list of words with that length] }\n\n'''\n\nfruit_words = [\"apple\",\"banana\",\"kiwi\",\"grape\",\"melon\",\"pear\"]\n\ndef group_words_by_length(fruit_words: list) -> dict:\n    dictionary_words = {}\n\n    for word in fruit_words:\n        length = len(word)\n\n        if length not in dictionary_words:\n            dictionary_words[length] = [word]\n\n        else:\n            dictionary_words[length].append(word)\n\n\n    return dictionary_words\n\nprint(group_words_by_length(fruit_words))\nprint(\"-\" * 20)\n\n#2 question\n\n#Write a function that calculates the average grade of all students\n'''\n    :param grades: {<name>: <grade>}\n    :return: average grade of all students\n    \n'''\n\ngrades = {\"Tom\":80, \"Anna\":95, \"John\":70, \"Sara\":85}\n\ndef get_average_grade(grades: dict) -> float:\n    students_amount = 0\n    total_grade = 0\n\n    for name, grade in grades.items():\n        total_grade += grade\n        students_amount += 1\n\n    average_grade = total_grade / students_amount\n    return average_grade\n\nprint(get_average_grade(grades))\nprint(\"-\" * 20)\n\n#3 question\n\n'''\n    :param nums: list of numbers\n    :return: dictionary with keys:\n             \"positive\", \"negative\", \"zero\"\n             and lists of numbers for each category\n'''\n\nnumbers = [4, -2, 0, 7, -5, 3]\n\ndef group_numbers(numbers: list) -> dict:\n    dictionary = {\n        \"positive\": [],\n        \"negative\": [],\n        \"zero\": [],\n    }\n    for num in numbers:\n        if num > 0:\n            dictionary[\"positive\"].append(num)\n        elif num < 0:\n            dictionary[\"negative\"].append(num)\n        else:\n            dictionary[\"zero\"].append(num)\n\n    return dictionary\n\nprint(group_numbers(numbers))\nprint(\"-\" * 20)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hw_15.03.26.py b/hw_15.03.26.py
+--- a/hw_15.03.26.py	(revision c3c712a103060f73691012215c572b2c4fcdaa9a)
++++ b/hw_15.03.26.py	(date 1773770191167)
+@@ -54,7 +54,6 @@
+ print("-" * 20)
+ 
+ #3 question
+-
+ '''
+     :param nums: list of numbers
+     :return: dictionary with keys:
+Index: .idea/HW.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"PYTHON_MODULE\" version=\"4\">\n  <component name=\"NewModuleRootManager\">\n    <content url=\"file://$MODULE_DIR$\" />\n    <orderEntry type=\"inheritedJdk\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/HW.iml b/.idea/HW.iml
+--- a/.idea/HW.iml	(revision c3c712a103060f73691012215c572b2c4fcdaa9a)
++++ b/.idea/HW.iml	(date 1773759641621)
+@@ -1,8 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <module type="PYTHON_MODULE" version="4">
+   <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$" />
+-    <orderEntry type="inheritedJdk" />
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/.venv" />
++    </content>
++    <orderEntry type="jdk" jdkName="Python 3.13 (HW)" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"4e31fa5e-3097-4538-b6dc-a8ea2f0e1ce0\" name=\"Changes\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"McpProjectServerCommands\">\n    <commands />\n    <urls />\n  </component>\n  <component name=\"ProjectColorInfo\"><![CDATA[{\n  \"associatedIndex\": 3\n}]]></component>\n  <component name=\"ProjectId\" id=\"3B4lEyQuxuTUveTa7X8GGCP4DHz\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.MCP Project settings loaded\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\"\n  }\n}]]></component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-python-sdk-2653e85de345-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.31033.139\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"4e31fa5e-3097-4538-b6dc-a8ea2f0e1ce0\" name=\"Changes\" comment=\"\" />\n      <created>1773756116086</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1773756116086</updated>\n    </task>\n    <servers />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c3c712a103060f73691012215c572b2c4fcdaa9a)
++++ b/.idea/workspace.xml	(date 1774195189937)
+@@ -1,30 +1,99 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4e31fa5e-3097-4538-b6dc-a8ea2f0e1ce0" name="Changes" comment="" />
++    <list default="true" id="4e31fa5e-3097-4538-b6dc-a8ea2f0e1ce0" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/HW-18.03.26.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Targil-18.03.26.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Targil-21-18.03.26.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/HW.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HW.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw_15.03.26.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw_15.03.26.py" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Python Script" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;VitoriaMassulo&quot;
++  }
++}</component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/VitoriaMassulo/HW.git&quot;,
++    &quot;accountId&quot;: &quot;8a632eef-332a-466d-84cb-f22a41ed5e69&quot;
++  }
++}</component>
+   <component name="McpProjectServerCommands">
+     <commands />
+     <urls />
+   </component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 3
+-}]]></component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 3
++}</component>
+   <component name="ProjectId" id="3B4lEyQuxuTUveTa7X8GGCP4DHz" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.MCP Project settings loaded": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
++    &quot;Python.HW-18.03.26.executor&quot;: &quot;Run&quot;,
++    &quot;Python.Question_to_make.executor&quot;: &quot;Run&quot;,
++    &quot;Python.Targil-18.03.26.executor&quot;: &quot;Run&quot;,
++    &quot;Python.Targil-21-18.03.26.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+   }
+-}]]></component>
++}</component>
++  <component name="RunManager">
++    <configuration name="HW-18.03.26" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="HW" />
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <option name="RUN_TOOL" value="" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HW-18.03.26.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Python.HW-18.03.26" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -42,4 +111,15 @@
+     </task>
+     <servers />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+ </project>
+\ No newline at end of file
+Index: HW-18.03.26.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/HW-18.03.26.py b/HW-18.03.26.py
+new file mode 100644
+--- /dev/null	(date 1774195042782)
++++ b/HW-18.03.26.py	(date 1774195042782)
+@@ -0,0 +1,55 @@
++#gets a list of numbs
++#gets a n-th choice for decreasing order of the list
++# later try to fix the out of range problem for n-th (non existent list position)
++import random
++
++def three_digit():
++
++    '''
++    this gets a input and checks if it is a number
++    and if its between my limit of 3 digits, it returns it
++    loops until get right input
++    '''
++
++    while True:
++        numbers = input(f"Input a number of 3 digits:")
++
++        if numbers.isdigit() and int(numbers) >= 100:
++            return int(numbers)
++        print(f"Invalid input. Try again.")
++
++def descent_orderer(unique_list: list) -> list:
++    '''
++
++    this gets a list of unique numbers and sort them in descending order
++
++    '''
++    unique_list.sort(reverse=True)
++    return unique_list
++
++
++while True:
++    user_number = three_digit()
++    print (f"number chosen is: {user_number}")
++
++    input_shuffle_list = [random.randint(0, user_number)\
++                      for n in range(30)]
++    print (f"Your generated random list (30 numbers can include duplicates):\n {input_shuffle_list}")
++
++    unique_list = list(set(input_shuffle_list))   # here i take out duplicates
++
++    sorted_unique_list = descent_orderer(unique_list)
++    print(f"This is the sorted list (without duplicates):\n {sorted_unique_list}")
++
++    while True:
++        n = int(input("Enter a number for n ( n will be the position of that number in descending order):  "))
++        print (f" The number in {n}-th biggest position is: {sorted_unique_list[n - 1]} ")
++
++        n_return = input("Want to continue checking positions yes/no?:").lower()
++        if n_return != "yes":
++            break
++
++    print("Goodbye than!")
++
++
++
