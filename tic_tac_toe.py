@@ -1,3 +1,5 @@
+import random
+
 def create_board():
     return [str(index) for index in range(1, 10)]
 
@@ -60,6 +62,18 @@ def make_move(board, position, symbol):
             board[index] = symbol
             break
 
+def computer_move(board):
+    '''
+    this one searches for available spots
+    amd picks one randomly.
+    '''
+
+    available_spots = []
+    for index, spot in enumerate(board):
+        if spot.isdigit():
+            available_spots.append(index + 1)
+    return random.choice(available_spots)
+
 def check_winner(board, symbol):
     '''
     this one loops through the winning indexes
@@ -89,7 +103,7 @@ def is_tie(board):
     return True
 
 def score_print(score):
-    print("\n=== SCOREBOARD ===\n")
+    print("=== SCOREBOARD ===\n")
     print(f"❌ Player X: {score['X']} wins!")
     print(f"⭕ Player O: {score['O']} wins!")
     print(f"👔 Ties: {score['Ties']}\n")
@@ -118,6 +132,8 @@ def play_again():
 def play_game():
     print("=== ❌ Welcome to my Tic Tac Toe! ⭕ ===\n")
 
+    multiplayer = input("Choose your multiplayer.\n"
+                        "(1) HUMAN or (2) COMPUTER? Enter 1 or 2: \n")
     score = {
         "X": 0,
         "O": 0,
@@ -131,7 +147,12 @@ def play_game():
 
         while True:
             print_board(board)
-            position = get_move(current_player, board)
+
+            if current_player == "O" and multiplayer == "2":
+                print("\n🤖 Computer is thinking...\n")
+                position = computer_move(board)
+            else:
+                position = get_move(current_player, board)
 
             if position == "reset":
                 print("\n Restarting game...\n")
