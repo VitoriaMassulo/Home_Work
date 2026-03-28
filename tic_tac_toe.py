@@ -24,10 +24,16 @@ def get_move(player, board):
                f"❌ There are only spots from 1 - 9. Choose a preferable available spot.\n"
                f"😄 Now that you know, Try again.\n")
 
-        print(f"Player {player}, choose your spot:")
+        print(f"\nPlayer {player}, choose your spot.\n"
+              f"Press 'r' any moment to reset current game.\n")
+
+        spot_choice = input("Enter a number (1 to 9):\n")
+
+        if spot_choice.lower() == "r":
+            return "reset"
 
         try:
-            spot_choice = int(input("Enter a spot number (1 to 9): "))
+            spot_choice = int(spot_choice)
 
             if spot_choice not in range(1, 10):
                 print(f"{move_rule}")
@@ -121,16 +127,23 @@ def play_game():
     while True:
         board = create_board()
         current_player = "X"
+        is_reset = False
 
         while True:
             print_board(board)
             position = get_move(current_player, board)
+
+            if position == "reset":
+                print("\n Restarting game...\n")
+                is_reset = True
+                break
+
             make_move(board, position, current_player)
 
             if check_winner(board, current_player):
                 print_board(board)
                 print(f"\n🏆 Player {current_player} wins!\n")
-                score[current_player] =+ 1
+                score[current_player] += 1
                 score_print(score)
                 break
 
@@ -143,9 +156,10 @@ def play_game():
 
             current_player = switch_player(current_player)
 
-        replay = play_again()
-        if replay == False:
-            break
+        if is_reset == False:
+            replay = play_again()
+            if replay == False:
+                break
 
 
 

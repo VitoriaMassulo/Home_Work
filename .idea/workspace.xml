@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e31fa5e-3097-4538-b6dc-a8ea2f0e1ce0" name="Changes" comment="incomplete versions">
-      <change afterPath="$PROJECT_DIR$/HM_Slotting_Machine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Targil-25.03.26.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tic_tac_toe.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tic_tac_toe.py" beforeDir="false" afterPath="$PROJECT_DIR$/tic_tac_toe.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
